@@ -61,7 +61,7 @@ pipeline {
         stage('Docker Build & Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Docker', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'Docker') {
                         sh ''' 
                         echo "Building Docker image..."
                         docker build --no-cache -t selvavignesh02/selvavignesh02:latest -f bookmyshow-app/Dockerfile bookmyshow-app
